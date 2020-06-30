@@ -3,9 +3,9 @@
     <!-- header -->
     <v-app-bar
       color="deep-purple accent-4"
-      dense
       app
-      style="height: 70px;"
+      height="70"
+      style="padding: 0px 20px;"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-toolbar-title>Page title</v-toolbar-title>
@@ -44,7 +44,6 @@
     </div>
     <!-- footer -->
     <v-bottom-navigation
-      v-model="bottomNav"
       app
       style="height: 70px;"
     >
