@@ -2,8 +2,9 @@
   <div>
     <!-- header -->
     <v-app-bar
-      class="background-color-primary"
+      class="header background-color-primary"
       app
+      hide-on-scroll
       height="70"
     >
       <v-toolbar-title>
@@ -46,15 +47,16 @@
   background: #fbfbfb !important;
 }
 
-.header {
-  max-width: 940px;
-  min-width: 768px;
+@media screen and (min-width: 940px){
+  .header {
+    padding: 0 150px;
+  }
 }
 
 .container {
-  padding: 80px 10px 10px;
-  width: 100%;
+  margin: 80px auto 80px;
+  max-width: 940px;
   height: 100%;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 160px);
 }
 </style>
