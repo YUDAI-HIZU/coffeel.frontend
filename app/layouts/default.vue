@@ -11,8 +11,13 @@
         <img src="~assets/images/logo2.jpg" style="margin: 4px 0px 0px 3px; width: 130px; height: 40px;" alt="header" />
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
+      <v-btn class="mx-2 background-color-secondary" large depressed style="margin: 0 5px;">
+        <span>Recents</span>
+        <v-icon>mdi-history</v-icon>
+      </v-btn>
+      <v-btn class="mx-2" outlined large style="margin: 0 5px;">
+        <span>Recents</span>
+        <v-icon>mdi-history</v-icon>
       </v-btn>
     </v-app-bar>
     <!-- content -->
@@ -20,31 +25,17 @@
       <Nuxt />
     </div>
     <!-- footer -->
-    <v-bottom-navigation
-      app
-      height="70"
-    >
-      <v-btn value="recent">
-        <span>Recent</span>
-        <v-icon>mdi-history</v-icon>
-      </v-btn>
-
-      <v-btn value="favorites">
-        <span>Favorites</span>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn value="nearby">
-        <span>Nearby</span>
-        <v-icon>mdi-map-marker</v-icon>
-      </v-btn>
-    </v-bottom-navigation>
   </div>
 </template>
 
 <style scoped>
 .background-color-primary {
   background: #fbfbfb !important;
+}
+
+.background-color-secondary {
+  background: #00704A !important;
+  color: white !important;
 }
 
 @media screen and (min-width: 940px){
