@@ -20,7 +20,7 @@
       <Nuxt />
     </div>
     <!-- footer -->
-    <!-- <v-bottom-navigation
+    <v-bottom-navigation
       app
       height="70"
     >
@@ -38,7 +38,7 @@
         <span>Nearby</span>
         <v-icon>mdi-map-marker</v-icon>
       </v-btn>
-    </v-bottom-navigation> -->
+    </v-bottom-navigation>
   </div>
 </template>
 
