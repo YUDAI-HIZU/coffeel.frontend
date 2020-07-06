@@ -22,7 +22,7 @@
     <!-- footer -->
     <v-bottom-navigation
       app
-      style="height: 70px;"
+      height="70"
     >
       <v-btn value="recent">
         <span>Recent</span>
