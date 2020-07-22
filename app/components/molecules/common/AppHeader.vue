@@ -22,7 +22,7 @@
         icon="mdi-history"
       >
       </AppButton>
-      <v-btn color="success" fab class="mobile-btn" @click.stop="drawer = !drawer">
+      <v-btn color="success" icon class="mobile-btn" @click.stop="drawer = !drawer">
         <v-app-bar-nav-icon x-large></v-app-bar-nav-icon>
       </v-btn>
     </v-app-bar>
