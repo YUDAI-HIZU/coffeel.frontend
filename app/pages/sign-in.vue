@@ -1,9 +1,9 @@
 <template>
   <v-card
-    class="mx-auto"
-    max-width="344"
-    style="margin-top: 90px; height: 500px;"
+    max-width="500"
+    style="margin: 100px auto; height: 500px; background: #f6f8fa;"
     outlined
   >
+  
   </v-card>
 </template>
