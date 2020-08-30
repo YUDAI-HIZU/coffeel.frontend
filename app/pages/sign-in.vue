@@ -4,6 +4,8 @@
     style="margin: 100px auto; height: 500px; background: #f6f8fa;"
     outlined
   >
-  
+    <v-card-title style="font-weight: bold;">
+      ログイン
+    </v-card-title>
   </v-card>
 </template>
