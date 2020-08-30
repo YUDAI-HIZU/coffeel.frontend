@@ -3,25 +3,29 @@
     <v-app-bar
       class="header background-color-primary"
       app
-      hide-on-scroll
       height="70"
     >
-      <v-toolbar-title>
-        <img src="~assets/images/logo2.jpg" style="margin: 4px 0px 0px 3px; width: 130px; height: 40px;" alt="header" />
-      </v-toolbar-title>
+      <nuxt-link to="/">
+        <v-toolbar-title>
+          <img src="~assets/images/logo.png" style="margin: 4px 0px 0px 3px; width: 150px; height: 40px;" alt="header" />
+        </v-toolbar-title>
+      </nuxt-link>
       <v-spacer></v-spacer>
-      <AppButton
-        number="secondary"
-        title="Recents"
-        icon="mdi-history"
-      >
-      </AppButton>
-      <AppButton
-        number="primary"
-        title="Recents"
-        icon="mdi-history"
-      >
-      </AppButton>
+      <nuxt-link to="/sign-in">
+        <AppButton
+          number="primary"
+          title="ログイン"
+        >
+        </AppButton>
+      </nuxt-link>
+      <span class="pc-btn">/</span>
+      <nuxt-link to="/sign-up">
+        <AppButton
+          number="primary"
+          title="新規登録"
+        >
+        </AppButton>
+      </nuxt-link>
       <v-app-bar-nav-icon x-large class="mobile-btn" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
     <v-navigation-drawer

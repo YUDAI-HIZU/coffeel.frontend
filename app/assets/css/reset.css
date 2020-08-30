@@ -76,3 +76,7 @@ input, textarea, select {
 legend {
   color: #000000;
 }
+
+a {
+  text-decoration: none;
+}

@@ -1,10 +1,8 @@
 <template>
   <v-btn 
     :class='`mx-2 background-color-${number} pc-btn`'
-    large
-    outlined
-    depressed
-    style="margin: 0 5px;"
+    text
+    style="margin: 0 5px; font-weight: bold;"
   >
     <span>{{ title }}</span>
     <v-icon>{{ icon }}</v-icon>
