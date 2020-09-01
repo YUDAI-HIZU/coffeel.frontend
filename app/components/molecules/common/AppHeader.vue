@@ -13,6 +13,7 @@
       <v-spacer></v-spacer>
       <nuxt-link to="/sign-in">
         <AppButton
+          style="margin: 0 auto;"
           number="primary"
           title="ログイン"
         >
@@ -74,7 +75,7 @@
       return {
         drawer: null,
         items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
+          { title: 'ログイン/新規登録', icon: 'mdi-view-dashboard' },
           { title: 'Photos', icon: 'mdi-image' },
           { title: 'About', icon: 'mdi-help-box' },
         ],

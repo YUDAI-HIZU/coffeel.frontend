@@ -84,3 +84,5 @@ dist
 sw.*
 
 app.env
+
+.DS_Store

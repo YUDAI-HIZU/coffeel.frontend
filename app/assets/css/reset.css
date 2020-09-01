@@ -10,6 +10,7 @@ body {
   "BIZ UDPGothic",
   Meiryo,
   sans-serif;
+  color: #333333;
 }
 
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
@@ -71,10 +72,6 @@ input, textarea, select {
 
 input, textarea, select {
   *font-size: 100%;
-}
-
-legend {
-  color: #000000;
 }
 
 a {
