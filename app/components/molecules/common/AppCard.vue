@@ -1,11 +1,11 @@
 <template>
   <v-card
     class="mx-auto my-12"
-    max-width="280"
+    max-width="350"
   >
     <v-img
       height="280"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+      :src="require('~/assets/images/kv3.jpeg')"
     ></v-img>
     <v-card-title>Cafe Badilico</v-card-title>
     <v-card-text>
