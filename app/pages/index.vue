@@ -13,12 +13,41 @@
       </swiper>
     </client-only>
     <div class="container__header">
-      <h1 class="title"><ruby><rb>COFFEEl</rb><rt>コーフィール</rt></ruby>でコーヒーがもっと好きになる</h1>
-      <p class="sub-title">お気に入りのコーヒーが見つかるシェアサービス</p>
-      <v-btn x-large class="background-color-secondary" depressed style="max-width: 300px; margin: 20px 0">コーヒーをさがす</v-btn>
+      <h1 class="site-title"><ruby><rb>COFFEEl</rb><rt>コーフィール</rt></ruby>でコーヒーがもっと好きになる</h1>
+      <p class="site-sub-title">お気に入りのコーヒーが見つかるシェアサービス</p>
+      <v-btn x-large class="background-color-secondary" to="/items" depressed style="margin: 20px 0">コーヒーをさがす</v-btn>
     </div>
     <div class="container__content">
-      <h2 class="sub-title sub-title--dark">Pickup！</h2>
+      <div class="content-title">
+        <h2 class="site-sub-title site-sub-title--dark pl-20">Pickup！</h2>
+        <v-btn depressed large to="/sign-in" style="font-weight: bold; width: 100%; text-transform: none; color: #17a9da; background: #fff; width: 150px; margin-left:auto;">
+          もっと見る ＞
+        </v-btn>
+      </div>
+      <div class="content-items" style="margin: 10px 0; display: flex; justify-content: center; flex-wrap: wrap;">
+        <AppCard/>
+        <AppCard/>
+        <AppCard/>
+        <AppCard/>
+      </div>
+    </div>
+    <div style="display: flex; margin-top: 40px; flex-wrap: wrap; justify-content: center;">
+      <div class="container__content">
+        <div class="content-title">
+          <h2 class="site-sub-title site-sub-title--dark pl-20">人気のカフェ</h2>
+          <v-btn depressed large to="/sign-in" style="font-weight: bold; width: 100%; text-transform: none; color: #17a9da; background: #fff; width: 150px; margin-left:auto;">
+            もっと見る ＞
+          </v-btn>
+        </div>
+      </div>
+      <div class="container__content">
+        <div class="content-title">
+          <h2 class="site-sub-title site-sub-title--dark pl-20">人気のカフェ</h2>
+          <v-btn depressed large to="/sign-in" style="font-weight: bold; width: 100%; text-transform: none; color: #17a9da; background: #fff; width: 150px; margin-left:auto;">
+            もっと見る ＞
+          </v-btn>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -121,20 +150,13 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 30px 0;
+    margin: 30px 0 10px;
   }
-  .title {
-    text-align: center;
-    font-size: 26px;
-    letter-spacing: .08em;
+  .content-title {
+    display: flex;
+    align-items: center;
   }
-  .sub-title {
-    text-align: center;
-    color: #757575;
-    font-size: 16px;
-    margin: 10px 0;
-  }
-  .sub-title--dark {
+  .site-sub-title--dark {
     font-size: 18px;
     font-weight: bold;
   }

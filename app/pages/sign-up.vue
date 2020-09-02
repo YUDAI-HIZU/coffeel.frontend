@@ -53,6 +53,16 @@
             outlined
             required
           ></v-text-field>
+          <v-checkbox
+            color="deep-purple"
+          >
+            <template class="text-box" v-slot:label>
+              <nuxt-link class="small-text color-accent" to="#">利用規約</nuxt-link>
+              <span class="small-text">と</span>
+              <nuxt-link class="small-text color-accent" to="#">プライバシーポリシー</nuxt-link>
+              <span class="small-text">に同意する</span>
+            </template>
+          </v-checkbox>
         </v-card-text>
         <div style="margin: 0 auto 20px; max-width: 325px;">
           <v-btn class="background-color-secondary" depressed large style="font-weight: bold; width: 100%;">新規登録</v-btn>
@@ -85,3 +95,12 @@
     </v-col>
   </v-row>
 </template>
+
+<style scoped>
+  .small-text {
+    font-size: 12px;
+  }
+  .small-text:first-child {
+    margin-left: 15px;
+  }
+</style>
