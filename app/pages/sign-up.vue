@@ -83,25 +83,25 @@
               </ValidationProvider>
             </v-card-text>
             <div style="margin: 0 auto 20px; max-width: 325px;">
-              <v-btn @click="signup" :disabled="invalid" class="background-color-secondary" depressed large style="font-weight: bold; width: 100%;">新規登録</v-btn>
+              <v-btn @click="signUp" :disabled="invalid" class="background-color-secondary" depressed large style="font-weight: bold; width: 100%;">新規登録</v-btn>
             </div>
           </form>
         </ValidationObserver>
         <v-divider class="mt-12"></v-divider>
         <div style="margin: 20px auto 20px; max-width: 325px;">
-          <v-btn depressed @click="twitter" large style="font-weight: bold; width: 100%; text-transform: none; background: #55acee; color: white;">
+          <v-btn depressed @click="twitterAuth" large style="font-weight: bold; width: 100%; text-transform: none; background: #55acee; color: white;">
             <v-icon right dark style="position: absolute; left: 0;">mdi-twitter</v-icon>
             Twitter
           </v-btn>
         </div>
         <div style="margin: 0 auto 20px; max-width: 325px;">
-          <v-btn depressed @click="facebook" large style="font-weight: bold; width: 100%; text-transform: none; background: #3b5998; color: white;">
+          <v-btn depressed @click="facebookAuth" large style="font-weight: bold; width: 100%; text-transform: none; background: #3b5998; color: white;">
             <v-icon right dark style="position: absolute; left: 0;">mdi-facebook</v-icon>
             Facebook
           </v-btn>
         </div>
         <div style="margin: 0 auto 20px; max-width: 325px;">
-          <v-btn depressed @click="google" large style="font-weight: bold; width: 100%; text-transform: none; background: white; border: solid 1px black; position: relative;">
+          <v-btn depressed @click="googleAuth" large style="font-weight: bold; width: 100%; text-transform: none; background: white; border: solid 1px black; position: relative;">
             <img src="~assets/images/g-logo.png" alt="" style="height: 20px; width: 20px; position: absolute; left: 5px;">
             Sign up with Google
           </v-btn>
@@ -118,7 +118,6 @@
 
 <script>
 import firebase from "@/plugins/firebase";
-
 export default {
   data() {
     return {
@@ -129,46 +128,59 @@ export default {
       showPassword: false,
       showPasswordConfirm: false,
       agreement: null,
-      errorMessages: {
-        email: '',
-        password: '',
-        passwordConfirm: '',
-      },
     };
   },
   methods: {
-    signup() {
+    signUp() {
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-        .then(res => {
-          console.log(res.user)
+        .then(response => {
+          console.log(response.user)
+          const actionCodeSettings = {
+            url: 'http://' + window.location.host + '/sign-up'
+          }
+          response.user.sendEmailVerification(actionCodeSettings)
+            .then((response) => {
+              console.info('sendEmailVerification')
+            }).catch((error) => {
+              console.error(error)
+            })
         })
         .catch(error => {
           console.error(error)
         })
     },
-    google() {
+    googleAuth() {
       const provider = new firebase.auth.GoogleAuthProvider()
       firebase.auth().signInWithPopup(provider)
-        .then(function(res) {
-          console.log(res.user)
+        .then(response => {
+          console.log(response.user)
         }).catch(error => {
           console.error(error)
         })
     },
-    twitter() {
+    twitterAuth() {
       const provider = new firebase.auth.TwitterAuthProvider()
       firebase.auth().signInWithPopup(provider)
-        .then(function(res) {
-          console.log(res.user)
+        .then(response => {
+          console.log(response.user)
         }).catch(error => {
           console.error(error)
         })
     },
-    facebook() {
+    facebookAuth() {
       const provider = new firebase.auth.FacebookAuthProvider()
       firebase.auth().signInWithPopup(provider)
-        .then(function(res) {
-          console.log(res.user)
+        .then(response => {
+          console.log(response.user)
+          const actionCodeSettings = {
+            url: 'http://' + window.location.host + '/sign-up'
+          }
+          response.user.sendEmailVerification(actionCodeSettings)
+            .then((response) => {
+              console.info('sendEmailVerification')
+            }).catch((error) => {
+              console.error(error)
+            })
         }).catch(error => {
           console.error(error)
         })

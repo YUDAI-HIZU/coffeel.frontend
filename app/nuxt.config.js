@@ -48,8 +48,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
-    { src: '@/plugins/vee-validate' }
+    { src: '~/plugins/vue-awesome-swiper', mode: 'client' },
+    '~/plugins/vee-validate',
   ],
   /*
   ** Auto import components
