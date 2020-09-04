@@ -7,13 +7,13 @@
           :key="i"
         >
           <img class="top-img" :src="item.src" alt="kv">
-          <v-btn outlined class="view-btn">view</v-btn>
+          <!-- <v-btn outlined class="view-btn">view</v-btn> -->
         </swiper-slide>
         <div class="swiper-pagination swiper-pagination-bullets" slot="pagination"></div>
       </swiper>
     </client-only>
     <div class="container__header">
-      <h1 class="site-title"><ruby><rb>COFFEEl</rb><rt>コーフィール</rt></ruby>でコーヒーがもっと好きになる</h1>
+      <h1 class="site-title title"><ruby><rb>COFFEEl</rb><rt>コーフィール</rt></ruby>でコーヒーがもっと好きになる</h1>
       <p class="site-sub-title">お気に入りのコーヒーが見つかるシェアサービス</p>
       <v-btn x-large class="background-color-secondary" to="/items" depressed style="margin: 20px 0">コーヒーをさがす</v-btn>
     </div>
@@ -31,24 +31,52 @@
         <AppCard/>
       </div>
     </div>
-    <div style="display: flex; margin-top: 40px; flex-wrap: wrap; justify-content: center;">
-      <div class="container__content">
+    <v-row no-gutters class="container__content">
+      <v-col cols="12" md="8" lg="8" justify="center">
         <div class="content-title">
-          <h2 class="site-sub-title site-sub-title--dark pl-20">人気のカフェ</h2>
+          <h2 class="site-sub-title site-sub-title--dark pl-20">おすすめCafe!</h2>
           <v-btn depressed large to="/sign-in" style="font-weight: bold; width: 100%; text-transform: none; color: #17a9da; background: #fff; width: 150px; margin-left:auto;">
             もっと見る ＞
           </v-btn>
         </div>
-      </div>
-      <div class="container__content">
+        <v-row no-gutters>
+          <v-col cols="12" md="6" lg="6">
+            <AppHorizontalCard/>
+          </v-col>
+          <v-col cols="12" md="6" lg="6">
+            <AppHorizontalCard/>
+          </v-col>
+          <v-col cols="12" md="6" lg="6">
+            <AppHorizontalCard/>
+          </v-col>
+          <v-col cols="12" md="6" lg="6">
+            <AppHorizontalCard/>
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="12" md="4" lg="4" justify="center">
         <div class="content-title">
-          <h2 class="site-sub-title site-sub-title--dark pl-20">人気のカフェ</h2>
+          <h2 class="site-sub-title site-sub-title--dark pl-20">News!</h2>
           <v-btn depressed large to="/sign-in" style="font-weight: bold; width: 100%; text-transform: none; color: #17a9da; background: #fff; width: 150px; margin-left:auto;">
             もっと見る ＞
           </v-btn>
         </div>
-      </div>
-    </div>
+        <v-row no-gutters>
+          <v-col cols="12">
+            <AppHorizontalCard/>
+          </v-col>
+          <v-col cols="12">
+            <AppHorizontalCard/>
+          </v-col>
+          <v-col cols="12">
+            <AppHorizontalCard/>
+          </v-col>
+          <v-col cols="12">
+            <AppHorizontalCard/>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
