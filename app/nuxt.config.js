@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 export default {
   /*
@@ -32,12 +33,23 @@ export default {
     '@/assets/css/reset.css',
     '@/assets/css/common.css',
   ],
+  // Routing configuration
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, '~/pages/error.vue')
+      })
+    }
+  },
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '@/plugins/vue-awesome-swiper', mode: 'client' }
+    { src: '~/plugins/vue-awesome-swiper', mode: 'client' },
+    '~/plugins/vee-validate',
   ],
   /*
   ** Auto import components
@@ -49,7 +61,8 @@ export default {
   */
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Nuxt.js modules
@@ -61,5 +74,6 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    transpile: ["vee-validate/dist/rules"]
   }
 }
