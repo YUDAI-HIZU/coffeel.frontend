@@ -68,6 +68,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-client-init-module',
+    'cookie-universal-nuxt'
   ],
   /*
   ** Build configuration
