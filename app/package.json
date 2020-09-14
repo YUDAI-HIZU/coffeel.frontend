@@ -12,9 +12,11 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.10",
     "@nuxtjs/dotenv": "^1.4.1",
+    "cookie-universal-nuxt": "^2.1.4",
     "core-js": "2.6.9",
     "firebase": "^7.19.1",
     "nuxt": "^2.13.0",
+    "nuxt-client-init-module": "^0.1.8",
     "save": "^2.4.0",
     "swiper": "5.4.5",
     "vee-validate": "^3.3.9",

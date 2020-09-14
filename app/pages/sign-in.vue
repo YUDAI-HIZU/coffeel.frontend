@@ -80,7 +80,6 @@
   </v-row>
 </template>
 <script>
-import firebase from "@/plugins/firebase";
 export default {
   data() {
     return {
@@ -92,40 +91,19 @@ export default {
   },
   methods: {
     signIn() {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-        .then(response => {
-          console.log(response.user)
-        })
-        .catch(error => {
-          console.error(error)
-        })
+      this.$store.dispatch('signIn', {
+        email: this.email,
+        password: this.password,
+      })
     },
     googleAuth() {
-      const provider = new firebase.auth.GoogleAuthProvider()
-      firebase.auth().signInWithPopup(provider)
-        .then(response => {
-          console.log(response.user)
-        }).catch(error => {
-          console.error(error)
-        })
+      this.$store.dispatch('googleAuth')
     },
     twitterAuth() {
-      const provider = new firebase.auth.TwitterAuthProvider()
-      firebase.auth().signInWithPopup(provider)
-        .then(response => {
-          console.log(response.user)
-        }).catch(error => {
-          console.error(error)
-        })
+      this.$store.dispatch('twitterAuth')
     },
     facebookAuth() {
-      const provider = new firebase.auth.FacebookAuthProvider()
-      firebase.auth().signInWithPopup(provider)
-        .then(response => {
-          console.log(response.user)
-        }).catch(error => {
-          console.error(error)
-        })
+      this.$store.dispatch('facebookAuth')
     }
   }
 }
